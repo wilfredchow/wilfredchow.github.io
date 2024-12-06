@@ -36,17 +36,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        h1 a {
-            text-decoration: none;
-            color: inherit;
+            flex-wrap: wrap; /* Allow wrapping for mobile */
         }
 
         .menu-toggle {
@@ -58,6 +48,7 @@
         .nav-buttons {
             display: flex;
             gap: 1rem;
+            transition: all 0.3s ease;
         }
 
         .nav-button {
@@ -72,25 +63,18 @@
         }
 
         /* Mobile Menu */
-        .nav-buttons {
-            transition: all 0.3s ease;
-        }
-
         .nav-buttons.active {
             display: flex;
             flex-direction: column;
             background-color: #fff;
-            position: absolute;
-            top: 100%;
-            left: 0;
             width: 100%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 100;
+            margin-top: 10px;
         }
 
         .nav-buttons.active a {
             padding: 10px;
             border-bottom: 1px solid #eee;
+            text-align: left;
         }
 
         .nav-buttons.active a:last-child {
@@ -101,16 +85,15 @@
             background-color: #f5f5f5;
         }
 
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
         h2 {
             font-size: 2rem;
             margin-top: 20px;
             color: #444;
-        }
-
-        p {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            line-height: 1.6;
         }
 
         .contact-section {
@@ -178,12 +161,23 @@
                 width: 100%;
             }
 
-            .nav-buttons.active {
-                position: relative; /* Ensure menu pushes content down */
+            nav {
+                flex-direction: column; /* Stack name and menu vertically */
+                align-items: flex-start; /* Align content to the left */
             }
 
-            .container {
-                margin-top: 20px; /* Prevent overlap */
+            h1 {
+                width: 100%; /* Ensure name takes full width */
+                margin-bottom: 10px; /* Add spacing below the name */
+                text-align: left; /* Align name to the left */
+            }
+
+            .menu-toggle {
+                align-self: flex-end; /* Position toggle to the right */
+            }
+
+            .nav-buttons.active {
+                margin-top: 10px; /* Push the menu below the name */
             }
         }
     </style>
@@ -191,7 +185,7 @@
 <body>
     <header>
         <nav class="container">
-            <h1><a href="index.html">Wilfred M. Chow</a></h1>
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;">Wilfred M. Chow</a></h1>
             <span class="menu-toggle">☰</span>
             <div class="nav-buttons">
                 <a href="index.html" class="nav-button">Home</a>
