@@ -1,13 +1,114 @@
-<!-- research.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research - Wilfred M. Chow</title>
-    <!-- Copy the entire <style> section from the index.html file here -->
     <style>
-        /* Copy all CSS from index.html */
+        /* General Styles for Harmonization */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.8;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #333;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-button {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-button:hover {
+            color: #555;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #444;
+            font-weight: normal; /* Normal weight for headers */
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #666;
+            margin-top: 15px;
+            font-weight: normal; /* Normal weight for subheaders */
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+            font-weight: normal; /* Normal weight for paragraphs */
+        }
+
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin: 20px 0;
+        }
+
+        .publication {
+            margin-bottom: 20px;
+        }
+
+        .publication-title {
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: normal; /* Normal weight for titles */
+        }
+
+        .publication-links a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-right: 10px;
+            font-weight: normal; /* Normal weight for links */
+        }
+
+        .publication-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -16,53 +117,105 @@
             <h1>Wilfred M. Chow</h1>
             <div class="nav-buttons">
                 <a href="index.html" class="nav-button">Home</a>
-                <a href="research.html" class="nav-button">Research</a>
+                <a href="https://wilfredchow.com/research/" class="nav-button active">Research</a>
                 <a href="teaching.html" class="nav-button">Teaching</a>
                 <a href="cv.html" class="nav-button">Curriculum Vitae</a>
                 <a href="contact.html" class="nav-button">Contact</a>
             </div>
         </nav>
-    </header>
+    </header>       
 
     <main class="container">
-        <section class="profile-section">
-            <h2>Research</h2>
-            
-            <div class="quote">
-                "Well, back to the old drawing board."
-            </div>
+        <!-- Hero Section with Drawing Board Image -->
+        <section class="hero-image">
+             <img src="images/drawing_board.jpg" alt="A drawing board illustration"> 
+             <p class="quote">"Well, back to the old drawing board."</p>
+        </section>
 
-            <h3 class="section-header">Publications</h3>
-
+        <!-- Publications Section -->
+        <section class="publications">
+            <h2>Publications</h2>
             <div class="publication">
-                <p>Muddying the Waters: How Perceived Foreign Interference Delegitimizes Public Opinion on Protest Movements (with Dov Levin). Forthcoming at the <em>American Political Science Review</em>.</p>
+                <p class="publication-title">Muddying the Waters: How Perceived Foreign Interference Delegitimizes Public Opinion on Protest Movements (with Dov Levin). Forthcoming at the <em>American Political Science Review</em>.</p>
                 <div class="publication-links">
-                    <a href="#">Paper link</a>
-                    <a href="#">Appendix</a>
-                    <a href="#">Replication</a>
-                    <a href="#">Stanford Social Innovation Review link</a>
+                    <a href="https://doi.org/10.1017/S0003055424000327" target="_blank">Paper link</a>
+                    <a href="https://static.cambridge.org/content/id/urn%3Acambridge.org%3Aid%3Aarticle%3AS0003055424000327/resource/name/S0003055424000327sup001.docx" target="_blank">Appendix</a>
+                    <a href="https://doi.org/10.7910/DVN/ZSEWM4" target="_blank">Replication</a>
+                    <a href="https://ssir.org/articles/entry/protests-foreign-support-study" target="_blank">Stanford Social Innovation Review link</a>
                 </div>
             </div>
-
-            <h3 class="section-header">Research in Progress</h3>
             <div class="publication">
-                <p>Whataboutism in International Diplomacy: Shaping Third-Party Public Attitudes Toward U.S. Foreign Policy (with Dov Levin and Atsushi Tago). Under review.</p>
+                <p class="publication-title">Chow, Wilfred M. and Levin Dov H. “Why Whataboutism Works: In International Politics, It Pays to Point Fingers.” Foreign Affairs 27 August 2024.</p>
+                <div class="publication-links">
+                    <a href="https://www.foreignaffairs.com/united-states/why-whataboutism-works" target="_blank">Article link</a>
+                </div>
             </div>
-
             <div class="publication">
-                <p>Under China's Shadow: Authoritarian Resilience and Domestic Political Ideologies in Thailand (with Enze Han and Sirada Khemanithathai). Under review.</p>
+                <p class="publication-title">Chow, Wilfred M. and Levin, Dov H. 2024. “The Diplomacy of Whataboutism and U.S. Foreign Policy Attitudes.” <em>International Organization</em> 78(1): 103-133.</p>
+                <div class="publication-links">
+                    <a href="https://doi.org/10.1017/S002081832400002X" target="_blank">Paper link</a>
+                    <a href="https://static.cambridge.org/content/id/urn%3Acambridge.org%3Aid%3Aarticle%3AS002081832400002X/resource/name/S002081832400002Xsup001.pdf" target="_blank">Appendix</a>
+                    <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/M3ZPRD" target="_blank">Replication</a>
+                    <a href="https://www.duckofminerva.com/2024/04/61-questions-about-the-diplomacy-of-whataboutism.html" target="_blank">Duck of Minerva 6+1 Questions</a>
+                </div>
             </div>
-
             <div class="publication">
-                <p>Female Leaders and Gender Bias on the Use of Force (with Kai Quek).</p>
+                <p class="publication-title">Chow, Wilfred M. and Han, Enze. 2024. “Rugged Terrain, Forest Coverage, and Insurgency in Myanmar.” <em>Conflict Management and Peace Science</em> 41(3): 218-237.</p>
+                <div class="publication-links">
+                    <a href="documents/chowhan_myanmar.pdf" target="_blank">Paper link</a>
+                    <a href="documents/chowhan_myanmar_appendix.pdf" target="_blank">Appendix</a>
+                </div>
             </div>
-
             <div class="publication">
-                <p>Investors vs Skilled Immigrants: Evidence from a Survey Experiment in Canada (with Enze Han)</p>
+                <p class="publication-title">Chow, Wilfred M. and Han, Enze. 2023. “Descriptive Legitimacy and International Organizations: Evidence from United Nations High Commissioner for Refugees.” <em>Journal of Politics</em> 85(2): 357-371.</p>
+                <div class="publication-links">
+                    <a href="documents/final-manuscript-jop_chow-han.pdf" target="_blank">Paper link</a>
+                    <a href="documents/chowhan2022unhcr_appendix.pdf" target="_blank">Appendix</a>
+                    <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DUA6JS" target="_blank">Replication</a>
+                </div>
             </div>
-
             <div class="publication">
-                <p>The Dictator's Gambit: Leadership Survival and International Conflict Escalation</p>
+                <p class="publication-title">Chow, Wilfred M., Han, Enze, and Li, Xiaojun. 2019. “Brexit Identities and British Public Opinion.” <em>International Affairs</em> 95(6): 1369-1387.</p>
+                <div class="publication-links">
+                    <a href="https://academic.oup.com/ia/article/95/6/1369/5584347" target="_blank">Paper Link</a>
+                    <a href="https://doi.org/10.7910/DVN/GLM8OC" target="_blank">Appendix</a>
+                    <a href="https://theasiadialogue.com/2019/11/27/brexit-identities-and-british-public-opinion-on-china/" target="_blank">Asia Dialogue link</a>
+                </div>
+            </div>
+            <div class="publication">
+                <p class="publication-title">Baccini, Leonardo L. and Chow, Wilfred M. 2018. “The Politics of Preferential Trade Liberalization in Authoritarian Countries.” <em>International Interactions</em> 44(2): 189-216.</p>
+                <div class="publication-links">
+                    <a href="https://www.tandfonline.com/doi/abs/10.1080/03050629.2017.1373352" target="_blank">Paper Link</a>
+                    <a href="https://www.tandfonline.com/doi/suppl/10.1080/03050629.2017.1373352/suppl_file/gini_a_1373352_sm2052.pdf" targer="_blank">Appendix</a>
+                    <a href="https://doi.org/10.7910/DVN/LFZ33L" target="_blank">Replication</a>
+                </div>
+            </div>
+            <div class="publication">
+                <p class="publication-title">Chow, Wilfred M. and Kono, Daniel Y. 2017. “Entry, Vulnerability, and Trade Policy: Why Some Autocrats Liberalize Trade.” <em>International Studies Quarterly</em> 61(4): 892-906.</p>
+                <div class="publication-links">
+                    <a href="https://academic.oup.com/isq/article/61/4/892/4675254" target="_blank">Paper Link</a>
+                    <a href="https://doi.org/10.7910/DVN/M3CIGK" target="_blank">Replication</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research in Progress Section -->
+        <section class="research-in-progress">
+            <h2>Research in Progress</h2>
+            <div class="research-item">
+                <p class="research-title">Whataboutism in International Diplomacy: Shaping Third-Party Public Attitudes Toward U.S. Foreign Policy (with Dov Levin and Atsushi Tago). Under review.</p>
+            </div>
+            <div class="research-item">
+                <p class="research-title">Under China’s Shadow: Authoritarian Resilience and Domestic Political Ideologies in Thailand (with Enze Han and Sirada Khemanithathai). Under review.</p>
+            </div>
+            <div class="research-item">
+                <p class="research-title">Female Leaders and Gender Bias on the Use of Force (with Kai Quek).</p>
+            </div>
+            <div class="research-item">
+                <p class="research-title">Investors vs Skilled Immigrants: Evidence from a Survey Experiment in Canada (with Enze Han).</p>
+            </div>
+            <div class="research-item">
+                <p class="research-title">The Dictator’s Gambit: Leadership Survival and International Conflict Escalation.</p>
             </div>
         </section>
     </main>
