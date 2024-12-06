@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greetings - Wilfred M. Chow</title>
+    <title>Home - Wilfred M. Chow</title>
     <style>
         /* General Styles */
         * {
@@ -36,12 +36,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
+            flex-wrap: wrap; /* Allow wrapping for mobile */
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         .nav-buttons {
             display: flex;
             gap: 1rem;
+            transition: all 0.3s ease;
         }
 
         .nav-button {
@@ -55,52 +62,51 @@
             color: #555;
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .dropdown-menu {
-            display: none;
+        /* Mobile Menu */
+        .nav-buttons.active {
+            display: flex;
             flex-direction: column;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #ffffff;
-            border: 1px solid #ddd;
+            background-color: #fff;
             width: 100%;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
         }
 
-        .dropdown-menu a {
+        .nav-buttons.active a {
             padding: 10px;
-            text-align: center;
             border-bottom: 1px solid #eee;
         }
 
-        .dropdown-menu a:last-child {
+        .nav-buttons.active a:last-child {
             border-bottom: none;
         }
 
-        .dropdown-menu a:hover {
+        .nav-buttons.active a:hover {
             background-color: #f5f5f5;
         }
 
-        /* Profile Section Styles */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #444;
+        }
+
         .profile-section {
-            display: flex;
-            align-items: flex-start;
-            margin-top: 2rem;
+            margin-top: 20px;
+            line-height: 1.6;
         }
 
         .profile-image {
+            float: left; /* Float image to the left */
+            margin-right: 20px; /* Add space between image and text */
+            border-radius: 50%; /* Circular image */
             width: 200px;
             height: 200px;
-            border-radius: 50%;
             overflow: hidden;
-            margin-right: 20px;
-            flex-shrink: 0;
         }
 
         .profile-image img {
@@ -109,101 +115,41 @@
             object-fit: cover;
         }
 
-        .profile-info {
-            flex: 1;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin: 0;
-            color: #333;
-        }
-
-        h2 {
-            margin-bottom: 1rem;
-            font-size: 2rem;
-            color: #333;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            text-align: left;
-        }
-
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
         /* Responsive Styles */
         @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
-            nav {
-                flex-wrap: wrap;
-            }
-
             .menu-toggle {
-                display: block;
+                display: block; /* Show hamburger menu */
             }
 
             .nav-buttons {
-                display: none;
+                display: none; /* Hide by default */
                 flex-direction: column;
                 width: 100%;
             }
 
-            .nav-buttons.active {
-                display: flex;
+            nav {
+                flex-direction: column; /* Stack name and menu vertically */
+                align-items: flex-start; /* Align content to the left */
             }
 
-            .profile-section {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
+            h1 {
+                width: 100%; /* Ensure name takes full width */
+                margin-bottom: 10px; /* Add spacing below the name */
+                text-align: left; /* Align name to the left */
+            }
+
+            .menu-toggle {
+                align-self: flex-end; /* Position toggle to the right */
+            }
+
+            .nav-buttons.active {
+                margin-top: 10px; /* Push the menu below the name */
             }
 
             .profile-image {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-
-            .profile-info {
-                text-align: center;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-                text-align: center;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.3rem;
-            }
-
-            h2 {
-                font-size: 1.6rem;
-            }
-
-            p {
-                font-size: 0.9rem;
+                float: none; /* Remove float on mobile */
+                display: block;
+                margin: 0 auto 20px; /* Center image on mobile */
             }
         }
     </style>
@@ -221,34 +167,34 @@
                 <a href="contact.html" class="nav-button">Contact</a>
             </div>
         </nav>
-    </header>       
+    </header>
 
     <main class="container">
+        <h2>Greetings!</h2>
         <section class="profile-section">
             <div class="profile-image">
                 <img src="images/Wilfred_portrait.jpg" alt="Wilfred M. Chow">
             </div>
-            <div class="profile-info">
-                <h2>Greetings!</h2>
-                <p>
-                    I am an assistant professor in the School of International Studies at the University of Nottingham Ningbo China. My research interests include international relations, political economy, public opinion, and methodology.
-                </p>
-                <p>
-                    Specifically, I explore the role of mass publics in international relations by drawing from a diverse set of fields such as comparative authoritarianism, identity politics, and political communication. I employ a multi-method approach encompassing spatial econometrics, survey experiments, and automated text analysis.
-                </p>
-                <p>
-                    If you would like more information about my work, please <a href="mailto:wilfredmchow@outlook.com">contact me</a>.
-                </p>
-            </div>
+            <p>
+                I am an assistant professor in the School of International Studies at the University of Nottingham Ningbo China. My research interests include international relations, political economy, public opinion, and methodology.
+            </p>
+            <p>
+                Specifically, I explore the role of mass publics in international relations by drawing from a diverse set of fields such as comparative authoritarianism, identity politics, and political communication. I employ a multi-method approach encompassing spatial econometrics, survey experiments, and automated text analysis.
+            </p>
+            <p>
+                If you would like more information about my work, please <a href="mailto:wilfredmchow@outlook.com">contact me</a>.
+            </p>
         </section>
     </main>
 
     <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navButtons = document.querySelector('.nav-buttons');
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navButtons = document.querySelector('.nav-buttons');
 
-        menuToggle.addEventListener('click', () => {
-            navButtons.classList.toggle('active');
+            menuToggle.addEventListener('click', () => {
+                navButtons.classList.toggle('active');
+            });
         });
     </script>
 </body>
