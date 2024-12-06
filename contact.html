@@ -30,13 +30,13 @@
             color: #333;
             padding: 1rem 0;
             border-bottom: 1px solid #eee;
+            position: relative;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
         }
 
         .menu-toggle {
@@ -66,20 +66,15 @@
             transition: all 0.3s ease;
         }
 
-        .nav-buttons.mobile-hidden {
-            display: none;
-        }
-
         .nav-buttons.active {
             display: flex;
             flex-direction: column;
             background-color: #fff;
-            position: absolute;
-            top: 100%;
-            left: 0;
+            position: relative; /* No absolute positioning */
             width: 100%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 100;
+            margin-top: 10px;
         }
 
         .nav-buttons.active a {
@@ -163,12 +158,17 @@
         /* Responsive Styles */
         @media (max-width: 768px) {
             .menu-toggle {
-                display: block;
+                display: block; /* Show hamburger menu */
             }
 
             .nav-buttons {
-                display: none;
+                display: none; /* Hide by default */
                 flex-direction: column;
+                width: 100%;
+            }
+
+            .container {
+                margin-top: 20px; /* Prevent content overlap */
             }
         }
     </style>
@@ -178,7 +178,7 @@
         <nav class="container">
             <h1><a href="index.html" style="text-decoration: none; color: inherit;">Wilfred M. Chow</a></h1>
             <span class="menu-toggle">☰</span>
-            <div class="nav-buttons mobile-hidden">
+            <div class="nav-buttons">
                 <a href="index.html" class="nav-button">Home</a>
                 <a href="research.html" class="nav-button">Research</a>
                 <a href="teaching.html" class="nav-button">Teaching</a>
@@ -191,7 +191,7 @@
     <main class="container">
         <section class="contact-section">
             <h2>Contact Me</h2>
-            <p>Feel free to reach out to me using the form below or via the following contact details. I look forward to hearing from you!</p>
+            <p>Feel free to reach out to me using the form below or via the following contact details.</p>
 
             <!-- Contact Details -->
             <div class="contact-links">

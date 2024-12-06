@@ -30,13 +30,13 @@
             color: #333;
             padding: 1rem 0;
             border-bottom: 1px solid #eee;
+            position: relative;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
         }
 
         .menu-toggle {
@@ -66,20 +66,15 @@
             transition: all 0.3s ease;
         }
 
-        .nav-buttons.mobile-hidden {
-            display: none;
-        }
-
         .nav-buttons.active {
             display: flex;
             flex-direction: column;
             background-color: #fff;
-            position: absolute;
-            top: 100%;
-            left: 0;
+            position: relative; /* No absolute positioning */
             width: 100%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 100;
+            margin-top: 10px;
         }
 
         .nav-buttons.active a {
@@ -134,12 +129,17 @@
         /* Responsive Styles */
         @media (max-width: 768px) {
             .menu-toggle {
-                display: block;
+                display: block; /* Show hamburger menu */
             }
 
             .nav-buttons {
-                display: none;
+                display: none; /* Hide by default */
                 flex-direction: column;
+                width: 100%;
+            }
+
+            .container {
+                margin-top: 20px; /* Prevent content overlap */
             }
         }
     </style>
@@ -149,7 +149,7 @@
         <nav class="container">
             <h1><a href="index.html" style="text-decoration: none; color: inherit;">Wilfred M. Chow</a></h1>
             <span class="menu-toggle">☰</span>
-            <div class="nav-buttons mobile-hidden">
+            <div class="nav-buttons">
                 <a href="index.html" class="nav-button">Home</a>
                 <a href="research.html" class="nav-button">Research</a>
                 <a href="teaching.html" class="nav-button active">Teaching</a>
@@ -169,11 +169,11 @@
             </div>
 
             <p>Teaching and mentorship are crucial to my development and growth as a scholar. My teaching philosophy has three objectives:</p>
-            <li>
+            <ul>
                 <li>Exposing students to the cutting edge of political science research</li>
                 <li>Engaging with diverse student learning styles</li>
                 <li>Continuously improving my instruction to meet student needs</li>
-            </li>
+            </ul>
             <p>My hope is that in grounding my teaching with these objectives, I can inspire students to take ownership of their learning both in and beyond the classroom. Below is a sample of the courses that I have taught at the undergraduate and postgraduate level, which reflect my teaching philosophy.</p>
 
             <div class="course-list">
@@ -191,7 +191,7 @@
                 <h3>Graduate Courses (Masters program)</h3>
                 <div class="course-item">
                     Politics of Global Inequality (<a href="documents\politics_global_inequality_2017.pdf" class="syllabus-link">syllabus</a>)
-                </div
+                </div>
             </div>
         </section>
     </main>
@@ -205,6 +205,6 @@
                 navButtons.classList.toggle('active');
             });
         });
-    </script>    
+    </script>
 </body>
 </html>
