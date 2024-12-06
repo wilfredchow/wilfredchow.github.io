@@ -30,13 +30,23 @@
             color: #333;
             padding: 1rem 0;
             border-bottom: 1px solid #eee;
-            position: relative;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        h1 a {
+            text-decoration: none;
+            color: inherit;
         }
 
         .menu-toggle {
@@ -70,11 +80,12 @@
             display: flex;
             flex-direction: column;
             background-color: #fff;
-            position: relative; /* No absolute positioning */
+            position: absolute;
+            top: 100%;
+            left: 0;
             width: 100%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 100;
-            margin-top: 10px;
         }
 
         .nav-buttons.active a {
@@ -167,8 +178,12 @@
                 width: 100%;
             }
 
+            .nav-buttons.active {
+                position: relative; /* Ensure menu pushes content down */
+            }
+
             .container {
-                margin-top: 20px; /* Prevent content overlap */
+                margin-top: 20px; /* Prevent overlap */
             }
         }
     </style>
@@ -176,7 +191,7 @@
 <body>
     <header>
         <nav class="container">
-            <h1><a href="index.html" style="text-decoration: none; color: inherit;">Wilfred M. Chow</a></h1>
+            <h1><a href="index.html">Wilfred M. Chow</a></h1>
             <span class="menu-toggle">☰</span>
             <div class="nav-buttons">
                 <a href="index.html" class="nav-button">Home</a>
