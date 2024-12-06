@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research in Progress</title>
+    <title>Research - Wilfred M. Chow</title>
     <style>
         /* General Styles */
         * {
@@ -25,87 +25,138 @@
             padding: 20px;
         }
 
-/* General Navigation Styles */
-header {
-    background-color: #ffffff;
-    color: #333;
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
-}
+        header {
+            background-color: #ffffff;
+            color: #333;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping for mobile */
+        }
 
-.menu-toggle {
-    display: none; /* Hidden on desktop */
-    font-size: 1.5rem;
-    cursor: pointer;
-}
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
-.nav-buttons {
-    display: flex; /* Visible on desktop */
-    gap: 1rem;
-}
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
 
-.nav-button {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-}
+        .nav-button {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
 
-.nav-button:hover {
-    color: #555;
-}
+        .nav-button:hover {
+            color: #555;
+        }
 
-/* Mobile Menu */
-.nav-buttons.active {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-}
+        /* Mobile Menu */
+        .nav-buttons.active {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            width: 100%;
+            margin-top: 10px;
+        }
 
-.nav-buttons.active a {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-}
+        .nav-buttons.active a {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
 
-.nav-buttons.active a:last-child {
-    border-bottom: none;
-}
+        .nav-buttons.active a:last-child {
+            border-bottom: none;
+        }
 
-.nav-buttons.active a:hover {
-    background-color: #f5f5f5;
-}
+        .nav-buttons.active a:hover {
+            background-color: #f5f5f5;
+        }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Show hamburger menu on mobile */
-    }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
 
-    .nav-buttons {
-        display: none; /* Hide buttons by default on mobile */
-    }
+        h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #444;
+        }
 
-    .nav-buttons.active {
-        display: flex; /* Show buttons when active */
-    }
-}
-        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #666;
+        }
+
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin: 20px 0;
+        }
+
+        .publication, .research-item {
+            margin-bottom: 20px; /* Add spacing between items */
+        }
+
+        .publication-links a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        .publication-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Show hamburger menu */
+            }
+
+            .nav-buttons {
+                display: none; /* Hide by default */
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav {
+                flex-direction: column; /* Stack name and menu vertically */
+                align-items: flex-start; /* Align content to the left */
+            }
+
+            h1 {
+                width: 100%; /* Ensure name takes full width */
+                margin-bottom: 10px; /* Add spacing below the name */
+                text-align: left; /* Align name to the left */
+            }
+
+            .menu-toggle {
+                align-self: flex-end; /* Position toggle to the right */
+            }
+
+            .nav-buttons.active {
+                margin-top: 10px; /* Push the menu below the name */
+            }
+        }
     </style>
 </head>
 <body>
-
     <header>
         <nav class="container">
             <h1><a href="index.html" style="text-decoration: none; color: inherit;">Wilfred M. Chow</a></h1>
@@ -214,16 +265,16 @@ nav {
 </section>
 
     </main>
+    
     <script>
-        // Hamburger menu toggle
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navButtons = document.querySelector('.nav-buttons');
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navButtons = document.querySelector('.nav-buttons');
 
-    menuToggle.addEventListener('click', () => {
-        navButtons.classList.toggle('active');
-    });
-});
-    </script>   
+            menuToggle.addEventListener('click', () => {
+                navButtons.classList.toggle('active');
+            });
+        });
+    </script>  
 </body>
 </html>
