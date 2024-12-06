@@ -36,6 +36,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         .nav-buttons {
@@ -54,40 +61,81 @@
             color: #555;
         }
 
-        h1, h2 {
+        /* Mobile Menu */
+        .nav-buttons {
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons.mobile-hidden {
+            display: none;
+        }
+
+        .nav-buttons.active {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .nav-buttons.active a {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-buttons.active a:last-child {
+            border-bottom: none;
+        }
+
+        .nav-buttons.active a:hover {
+            background-color: #f5f5f5;
+        }
+
+        h2 {
+            font-size: 2rem;
             margin-top: 20px;
             color: #444;
         }
 
-        .cv-section {
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #666;
+        }
+
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin: 20px 0;
+        }
+
+        .course-list {
             margin-top: 20px;
         }
 
-        .cv-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #0066cc;
-            color: #fff;
+        .syllabus-link {
+            color: #0066cc;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
         }
 
-        .cv-link:hover {
-            background-color: #004999;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+        .syllabus-link:hover {
+            text-decoration: underline;
         }
 
         /* Responsive Styles */
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-buttons {
+                display: none;
+                flex-direction: column;
             }
         }
     </style>
@@ -96,11 +144,12 @@
     <header>
         <nav class="container">
             <h1>Wilfred M. Chow</h1>
-            <div class="nav-buttons">
+            <span class="menu-toggle">☰</span>
+            <div class="nav-buttons mobile-hidden">
                 <a href="index.html" class="nav-button">Home</a>
-                <a href="https://wilfredchow.com/research/" class="nav-button">Research</a>
-                <a href="teaching.html" class="nav-button">Teaching</a>
-                <a href="https://wilfredchow.com/cv/" class="nav-button active">Curriculum Vitae</a>
+                <a href="research.html" class="nav-button">Research</a>
+                <a href="teaching.html" class="nav-button active">Teaching</a>
+                <a href="cv.html" class="nav-button">Curriculum Vitae</a>
                 <a href="contact.html" class="nav-button">Contact</a>
             </div>
         </nav>
@@ -116,5 +165,15 @@
             <a href="documents/cv.pdf" class="cv-link" target="_blank">Download CV (PDF)</a>
         </section>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navButtons = document.querySelector('.nav-buttons');
+
+            menuToggle.addEventListener('click', () => {
+                navButtons.classList.toggle('active');
+            });
+        });
+    </script>    
 </body>
 </html>
