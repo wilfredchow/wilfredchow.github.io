@@ -1,13 +1,111 @@
-<!-- teaching.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teaching - Wilfred M. Chow</title>
-    <!-- Copy the entire <style> section from the index.html file here -->
     <style>
-        /* Copy all CSS from index.html */
+        /* General Styles for Harmonization */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.8;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #333;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-button {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-button:hover {
+            color: #555;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #444;
+            font-weight: normal; /* Normal weight for headers */
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #666;
+            margin-top: 15px;
+            font-weight: normal; /* Normal weight for subheaders */
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+            font-weight: normal; /* Normal weight for paragraphs */
+        }
+
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin: 20px 0;
+        }
+
+        .course-list {
+            margin-top: 20px;
+        }
+
+        .course-item {
+            margin-bottom: 10px;
+        }
+
+        .syllabus-link {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        .syllabus-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -44,19 +142,19 @@
             <div class="course-list">
                 <h3>Undergraduate Courses</h3>
                 <div class="course-item">
-                    Global Political Economy (<a href="#" class="syllabus-link">syllabus</a>)
+                    Global Political Economy (<a href="documents/gpe2021-2022syllabus.pdf" class="syllabus-link">syllabus</a>)
                 </div>
                 <div class="course-item">
-                    Challenges of Global Governance: Past and Present (<a href="#" class="syllabus-link">syllabus</a>)
+                    Challenges of Global Governance: Past and Present (<a href="documents/ccgl9035syllabus.pdf" class="syllabus-link">syllabus</a>)
                 </div>
                 <div class="course-item">
-                    Scientific Study of Politics (<a href="#" class="syllabus-link">syllabus</a>)
+                    Scientific Study of Politics (<a href="documents/pol51winter2014_syllabus.pdf" class="syllabus-link">syllabus</a>)
                 </div>
 
                 <h3>Graduate Courses (Masters program)</h3>
                 <div class="course-item">
-                    Politics of Global Inequality (<a href="#" class="syllabus-link">syllabus</a>)
-                </div>
+                    Politics of Global Inequality (<a href="documents\politics_global_inequality_2017.pdf" class="syllabus-link">syllabus</a>)
+                </div
             </div>
         </section>
     </main>
