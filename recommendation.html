@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Wilfred M. Chow</title>
+    <title>Teaching - Wilfred M. Chow</title>
     <style>
         /* General Styles */
         * {
@@ -12,9 +12,7 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-        p {
-                margin-bottom: 1.5rem; /* Adjust spacing as needed */
-            }        
+
         body {
             line-height: 1.8;
             color: #333;
@@ -76,6 +74,7 @@
         .nav-buttons.active a {
             padding: 10px;
             border-bottom: 1px solid #eee;
+            text-align: left;
         }
 
         .nav-buttons.active a:last-child {
@@ -97,24 +96,34 @@
             color: #444;
         }
 
-        .profile-section {
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #666;
+        }
+
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin: 20px 0;
+        }
+
+        ul {
+            margin-left: 20px; /* Add margin to align the list properly */
+        }
+        
+        .course-list {
             margin-top: 20px;
-            line-height: 1.6;
         }
 
-        .profile-image {
-            float: left; /* Float image to the left */
-            margin-right: 20px; /* Add space between image and text */
-            border-radius: 50%; /* Circular image */
-            width: 200px;
-            height: 200px;
-            overflow: hidden;
+        .syllabus-link {
+            color: #0066cc;
+            text-decoration: none;
         }
 
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .syllabus-link:hover {
+            text-decoration: underline;
         }
 
         /* Responsive Styles */
@@ -147,12 +156,6 @@
             .nav-buttons.active {
                 margin-top: 10px; /* Push the menu below the name */
             }
-
-            .profile-image {
-                float: none; /* Remove float on mobile */
-                display: block;
-                margin: 0 auto 20px; /* Center image on mobile */
-            }
         }
     </style>
 </head>
@@ -164,7 +167,7 @@
             <div class="nav-buttons">
                 <a href="index.html" class="nav-button">Home</a>
                 <a href="research.html" class="nav-button">Research</a>
-                <a href="teaching.html" class="nav-button">Teaching</a>
+                <a href="teaching.html" class="nav-button active">Teaching</a>
                 <a href="cv.html" class="nav-button">Curriculum Vitae</a>
                 <a href="contact.html" class="nav-button">Contact</a>
             </div>
@@ -172,21 +175,39 @@
     </header>
 
     <main class="container">
-        <h2>Greetings!</h2>
         <section class="profile-section">
-            <div class="profile-image">
-                <img src="images/me_portrait.jpg" alt="Wilfred M. Chow">
+            <h2>Teaching</h2>
+            
+            <div class="quote">
+                "I would rather have questions that can't be answered than answers that can't be questioned."
+                <br>- Richard Feynman
             </div>
 
-            <p>
-                I am an assistant professor in the School of International Studies at the University of Nottingham Ningbo China. My research interests include international relations, political economy, public opinion, and methodology.
-            </p>
-            <p>
-                Specifically, I explore the role of mass publics in international relations by drawing from a diverse set of fields such as comparative authoritarianism, identity politics, and political communication. I employ a multi-method approach encompassing spatial econometrics, survey experiments, and automated text analysis.
-            </p>
-            <p>
-                If you would like more information about my work, please <a href="mailto:wilfred.chow@nottingham.edu.cn">contact me</a>.
-            </p>
+            <p>Teaching and mentorship are crucial to my development and growth as a scholar. My teaching philosophy has three objectives:</p>
+            <ul>
+                <li>Exposing students to the cutting edge of political science research</li>
+                <li>Engaging with diverse student learning styles</li>
+                <li>Continuously improving my instruction to meet student needs</li>
+            </ul>
+            <p>My hope is that in grounding my teaching with these objectives, I can inspire students to take ownership of their learning both in and beyond the classroom. Below is a sample of the courses that I have taught at the undergraduate and postgraduate level, which reflect my teaching philosophy.</p>
+
+            <div class="course-list">
+                <h3>Undergraduate Courses</h3>
+                <div class="course-item">
+                    Global Political Economy (<a href="documents/gpe2021-2022syllabus.pdf" class="syllabus-link">syllabus</a>)
+                </div>
+                <div class="course-item">
+                    Challenges of Global Governance: Past and Present (<a href="documents/ccgl9035syllabus.pdf" class="syllabus-link">syllabus</a>)
+                </div>
+                <div class="course-item">
+                    Scientific Study of Politics (<a href="documents/pol51winter2014_syllabus.pdf" class="syllabus-link">syllabus</a>)
+                </div>
+
+                <h3>Graduate Courses (Masters program)</h3>
+                <div class="course-item">
+                    Politics of Global Inequality (<a href="documents/politics_global_inequality_2017.pdf" class="syllabus-link">syllabus</a>)
+                </div>
+            </div>
         </section>
     </main>
 
@@ -202,3 +223,4 @@
     </script>
 </body>
 </html>
+
